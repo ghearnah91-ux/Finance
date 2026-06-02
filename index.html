@@ -3,6 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Net Worth">
+<meta name="theme-color" content="#0a0e0f">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="manifest" href="manifest.json">
 <title>Net Worth Tracker</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
@@ -180,7 +186,85 @@ header .updated::before{content:'';width:6px;height:6px;border-radius:50%;backgr
 .est-date-badge .edb-val{font-family:'DM Serif Display',serif;font-size:22px;color:var(--gold)}
 .est-date-badge .edb-label{font-size:11px;color:var(--muted)}
 
-/* theme toggle */
+/* ── Mobile ────────────────────────────────────────────────── */
+@media(max-width:768px){
+  header{padding:12px 16px;gap:8px;flex-wrap:wrap}
+  header h1{font-size:16px}
+  header .subtitle{display:none}
+  header .updated{font-size:10px;margin-left:0}
+  .header-btns{gap:5px;flex-wrap:wrap}
+  .btn-export{font-size:9px;padding:5px 8px}
+  .theme-toggle{padding:4px 8px;font-size:10px}
+  #exportDropdown{right:0;min-width:130px}
+
+  .main{padding:14px 12px}
+  .tabs{gap:2px;padding:3px;margin-bottom:14px}
+  .tab{padding:6px 9px;font-size:9px;letter-spacing:.05em}
+
+  .kpi-row.cols6{grid-template-columns:repeat(2,1fr)}
+  .kpi-row.cols4{grid-template-columns:repeat(2,1fr)}
+  .kpi{padding:12px 10px}
+  .kpi-value{font-size:18px}
+  .kpi-label{font-size:9px}
+  .kpi-sub{font-size:9px}
+  .badge{font-size:8px;padding:1px 5px;top:8px;right:8px}
+
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr;gap:12px}
+  .card{padding:14px}
+  .card-title{font-size:9px;margin-bottom:10px}
+  .card-title span{font-size:13px}
+
+  .big-number{font-size:36px}
+  .breakdown-label{width:90px;font-size:11px}
+  .breakdown-value{font-size:11px;min-width:60px}
+
+  .ratio-grid{grid-template-columns:1fr 1fr;gap:8px}
+  .r-value{font-size:18px}
+
+  .score-ring svg{width:64px;height:64px}
+  .score-num{font-size:18px}
+
+  .mini-table{font-size:11px}
+  .mini-table th,.mini-table td{padding:5px 3px}
+
+  .countdown-wrap{flex-direction:column;align-items:flex-start;gap:12px}
+  .ring-wrap svg{width:80px;height:80px}
+
+  .est-date-badge{padding:7px 10px}
+  .edb-val{font-size:16px}
+
+  .form-grid{grid-template-columns:1fr 1fr;gap:8px}
+  .form-group input{padding:7px 8px;font-size:12px}
+  .btn{padding:8px 14px;font-size:10px}
+
+  .annual-row{grid-template-columns:50px 1fr 70px 60px;font-size:11px}
+  .annual-row .ann-bar-wrap{display:none}
+
+  .auth-card{padding:28px 20px}
+  .auth-logo{font-size:22px}
+
+  .tip-box{width:180px;font-size:10px}
+
+  /* Hide lower-priority columns on small screens */
+  .mini-table th:nth-child(4),
+  .mini-table td:nth-child(4),
+  .mini-table th:nth-child(5),
+  .mini-table td:nth-child(5){display:none}
+
+  .whatif-result{padding:10px}
+  .whatif-row{font-size:11px}
+
+  .sync-status{font-size:9px;padding:3px 7px}
+  .user-chip{font-size:10px;padding:3px 7px}
+  .user-avatar{width:16px;height:16px}
+}
+
+@media(max-width:400px){
+  .kpi-row.cols6{grid-template-columns:repeat(2,1fr)}
+  .tabs{gap:1px}
+  .tab{padding:5px 7px;font-size:8px}
+  .form-grid{grid-template-columns:1fr}
+}
 .theme-toggle{display:flex;align-items:center;gap:7px;background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:5px 12px;cursor:pointer;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);transition:all .2s;white-space:nowrap}
 .theme-toggle:hover{border-color:var(--accent);color:var(--text)}
 .toggle-track{width:28px;height:16px;background:var(--border);border-radius:8px;position:relative;transition:background .25s;flex-shrink:0}
